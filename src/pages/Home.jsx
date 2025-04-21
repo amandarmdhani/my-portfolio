@@ -3,21 +3,33 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (
-    <div className="text-center mt-10 space-y-6">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-pink-100 via-rose-200 to-pink-100 text-center px-4 py-10 animate-fadeIn space-y-6">
+      
       <img
         src="/profile.jpg"
         alt="profile"
-        className="mx-auto w-32 h-32 rounded-full shadow-lg ring-2 ring-blue-500"
+        className="w-36 h-36 rounded-full shadow-xl ring-4 ring-rose-400 hover:scale-105 transition duration-300 ease-in-out"
       />
-      <h2 className="text-4xl font-bold text-gray-800">Amanda Pramitha Ramadhani</h2>
-      <p className="text-gray-600 max-w-lg mx-auto">
-        Saya adalah seorang mahasiswa jurusan Informatika di Institut Teknologi Nasional. Saya memiliki minat yang besar dalam pengembangan web dan desain antarmuka pengguna. Di sini, Anda dapat menemukan beberapa proyek yang telah saya kerjakan dan informasi lebih lanjut tentang diri saya.
+
+      <h2 className="text-4xl md:text-5xl font-extrabold text-rose-800 drop-shadow-sm">
+        Amanda Pramitha Ramadhani
+      </h2>
+
+      <p className="text-gray-700 max-w-2xl text-lg leading-relaxed font-light">
+        Mahasiswa Informatika di Institut Teknologi Nasional. Passionate dalam pengembangan web dan desain UI. Jelajahi karya dan perjalanan belajarku di halaman ini.
       </p>
+
       <div className="space-x-4 mt-4">
-        <Link to="/about" className="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2 rounded-lg shadow">
+        <Link
+          to="/about"
+          className="bg-rose-500 hover:bg-rose-600 text-white px-6 py-2 rounded-full shadow-lg transition duration-300 ease-in-out hover:shadow-pink-400/50"
+        >
           Tentang Saya
         </Link>
-        <Link to="/projects" className="bg-green-500 hover:bg-green-600 text-white px-5 py-2 rounded-lg shadow">
+        <Link
+          to="/projects"
+          className="bg-emerald-500 hover:bg-emerald-600 text-white px-6 py-2 rounded-full shadow-lg transition duration-300 ease-in-out hover:shadow-emerald-400/50"
+        >
           Lihat Proyek
         </Link>
       </div>
@@ -26,3 +38,4 @@ const Home = () => {
 };
 
 export default Home;
+

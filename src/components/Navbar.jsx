@@ -14,16 +14,18 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="bg-rose-900 text-white shadow sticky top-0 z-50">
+    <nav className="bg-gradient-to-r from-rose-600 via-pink-500 to-fuchsia-500 text-white shadow-md sticky top-0 z-50 font-sans">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-        <Link to="/" className="text-2xl font-bold text-white">PORTOFOLIO</Link>
+        <Link to="/" className="text-3xl font-bold tracking-wide drop-shadow-md hover:opacity-90 transition">
+          MY PORTOFOLIO
+        </Link>
 
-        <div className="hidden md:flex space-x-6">
+        <div className="hidden md:flex space-x-8">
           {menu.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className={`hover:underline underline-offset-4 font-medium transition duration-200 ${
+              className={`transition-all duration-300 ease-in-out text-base font-medium hover:text-yellow-300 ${
                 location.pathname === item.path ? 'text-yellow-300' : 'text-white'
               }`}
             >
@@ -32,7 +34,7 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile menu icon */}
         <div className="md:hidden">
           <button onClick={() => setOpen(!open)}>
             {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -40,14 +42,15 @@ const Navbar = () => {
         </div>
       </div>
 
+      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden px-4 pb-4 space-y-2 bg-pink-600 text-white">
+        <div className="md:hidden px-6 pb-4 pt-2 space-y-2 bg-gradient-to-r from-rose-500 via-pink-500 to-fuchsia-500 transition-all duration-500">
           {menu.map((item) => (
             <Link
               key={item.path}
               to={item.path}
-              className={`block font-medium ${
-                location.pathname === item.path ? 'text-yellow-300 underline' : ''
+              className={`block text-base font-medium hover:text-yellow-300 ${
+                location.pathname === item.path ? 'text-yellow-300 underline' : 'text-white'
               }`}
               onClick={() => setOpen(false)}
             >
@@ -61,3 +64,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

@@ -8,18 +8,19 @@ const projects = [
   {
     title: 'Web Toko Baju',
     date: '25 November 2024',
-    description: 'Website Toko Baju yang mempunyai fitur checkout,input barang.',
+    description: 'Website Toko Baju yang mempunyai fitur checkout, input barang.',
     tech: ['HTML', 'PHP', 'Bootstrap'],
     image: '/web.tokobaju.png',
     link: 'https://github.com/amandarmdhani/toko.git',
   },
   {
     title: 'Web Portofolio',
-    date: 'Februari 2024',
-    description: 'Website portofolio ini dibuat sebagai representasi digital diri saya sebagai seorang pengembang web. Di dalamnya terdapat informasi pribadi, latar belakang pendidikan, keahlian, serta beberapa proyek yang pernah saya kerjakan.',
-    tech: ['React', 'CSS Module'],
+    date: '20 April 2024',
+    description:
+      'Website portofolio ini dibuat sebagai representasi digital diri saya sebagai seorang pengembang web. Di dalamnya terdapat informasi pribadi, latar belakang pendidikan, keahlian, serta beberapa proyek yang pernah saya kerjakan.',
+    tech: ['React', 'Tailwind CSS atau CSS Module'],
     image: '/web.portofolio.png',
-    link: 'https://github.com/username/todo-app',
+    link: 'https://github.com/amandarmdhani/my-portfolio.git',
   },
   // kamu bisa tambahkan lebih banyak proyek di sini
 ];
@@ -29,14 +30,14 @@ const Projects = () => {
     dots: true,
     infinite: true,
     speed: 500,
-    slidesToShow: 1, // Bisa kamu ubah jadi 2 atau 3
+    slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    autoplaySpeed: 2000,
     arrows: true,
     responsive: [
       {
-        breakpoint: 768, // untuk HP
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
         },
@@ -45,11 +46,13 @@ const Projects = () => {
   };
 
   return (
-    <div className="px-4 py-10">
-      <h2 className="text-2xl font-bold mb-6 text-center">My Projects</h2>
+    <div className="min-h-screen bg-gradient-to-b from-pink-100 via-pink-200 to-rose-100 px-4 py-12">
+      <h2 className="text-3xl font-bold text-center text-rose-700 mb-10 drop-shadow-sm">
+        ✨ My Projects ✨
+      </h2>
       <Slider {...settings}>
         {projects.map((project, index) => (
-          <div key={index} className="px-2">
+          <div key={index} className="px-4">
             <ProjectCard {...project} />
           </div>
         ))}
